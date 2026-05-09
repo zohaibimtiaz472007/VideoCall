@@ -17,8 +17,8 @@ export default function Room() {
         }
         const initializeMeeting = async () => {
             try {
-                const appID = 67861282;
-                const serverSecret = "8d4d58da8590a484f8f4db45a801f8cf";
+                const appID = import.meta.env.VITE_APP_ID;
+                const serverSecret = import.meta.env.VITE_SERVER_SECRET;
                 const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
                     appID,
                     serverSecret,
