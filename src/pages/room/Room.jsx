@@ -17,7 +17,7 @@ export default function Room() {
         }
         const initializeMeeting = async () => {
             try {
-                const appID = import.meta.env.VITE_APP_ID;
+                const appID = Number(import.meta.env.VITE_APP_ID);
                 const serverSecret = import.meta.env.VITE_SERVER_SECRET;
                 const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
                     appID,
@@ -44,7 +44,7 @@ export default function Room() {
                     }
                 });
             } catch (error) {
-                console.error('Error initializing meeting:', error);
+                // console.error('Error initializing meeting:', error);
                 alert('Failed to start meeting');
                 navigate('/');
             } finally {
